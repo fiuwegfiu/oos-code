@@ -39,7 +39,7 @@ def letters(amount):
 
 @app.route("/")
 def home():
-    return "DPS API Online"
+    return "OOS API Online"
 
 
 # =====================
