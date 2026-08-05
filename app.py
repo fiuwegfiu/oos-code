@@ -58,3 +58,12 @@ def join():
         "code": code
     })
 
+
+# Report ID
+@app.route("/generate/reportid")
+def agent():
+    code = f"R-{numbers(2)}{letters(1)}{numbers(1)}{letters(2)}}"
+
+    return jsonify({
+        "code": code
+    })
