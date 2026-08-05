@@ -95,4 +95,20 @@ def discipline():
     return jsonify({
         "code": code
     })
-    
+
+
+# =====================
+# WL Dashboard
+# =====================
+
+@app.route("/generate/dashboard")
+def dashboard():
+
+    if not verify_api_key():
+        return jsonify({"error": "Unauthorized"}), 401
+
+    code = f"{letters(1)}{numbers(1)}{lletters(1)}{numbers(2)}{letters(1)}{lletters(1)}"
+
+    return jsonify({
+        "code": code
+    })
