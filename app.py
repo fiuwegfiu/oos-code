@@ -33,6 +33,10 @@ def numbers(amount):
 def letters(amount):
     return ''.join(random.choice(string.ascii_uppercase) for _ in range(amount))
 
+
+def lletters(amount):
+    return ''.join(random.choice(string.ascii_lowercase) for _ in range(amount))
+
 # =====================
 # HOME
 # =====================
@@ -52,7 +56,7 @@ def join():
     if not verify_api_key():
         return jsonify({"error": "Unauthorized"}), 401
 
-    code = f"{numbers(3)}{letters(2)}{numbers(3)}{letters(1)}"
+    code = f"{numbers(3)}{lletters(2)}{numbers(3)}{letters(1)}"
 
     return jsonify({
         "code": code
@@ -62,7 +66,7 @@ def join():
 # Report ID
 @app.route("/generate/reportid")
 def agent():
-    code = f"R-{numbers(2)}{letters(1)}{numbers(1)}{letters(2)}}"
+    code = f"R-{numbers(2)}{lletters(1)}{numbers(1)}{letters(2)}"
 
     return jsonify({
         "code": code
