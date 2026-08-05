@@ -73,7 +73,7 @@ def report():
     if not verify_api_key():
         return jsonify({"error": "Unauthorized"}), 401
 
-    code = f"R-{numbers(2)}{letters(1)}{numbers(1)}"
+    code = f"R{numbers(2)}{letters(1)}{numbers(1)}"
 
     return jsonify({
         "code": code
