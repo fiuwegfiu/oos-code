@@ -56,7 +56,7 @@ def join():
     if not verify_api_key():
         return jsonify({"error": "Unauthorized"}), 401
 
-    code = f"{numbers(3)}{lletters(2)}{numbers(3)}{letters(1)}"
+    code = f"{numbers(1)}{lletters(1)}{numbers(1)}{letters(1)}{numbers(2)}{lletters(1)}"
 
     return jsonify({
         "code": code
@@ -73,7 +73,7 @@ def report():
     if not verify_api_key():
         return jsonify({"error": "Unauthorized"}), 401
 
-    code = f"R{numbers(2)}{letters(1)}{numbers(1)}"
+    code = f"{numbers(2)}{letters(1)}{numbers(1)}"
 
     return jsonify({
         "code": code
