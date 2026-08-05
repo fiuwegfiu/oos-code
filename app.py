@@ -33,6 +33,14 @@ def numbers(amount):
 def letters(amount):
     return ''.join(random.choice(string.ascii_uppercase) for _ in range(amount))
 
+# =====================
+# HOME
+# =====================
+
+@app.route("/")
+def home():
+    return "DPS API Online"
+
 
 # =====================
 # JOIN CODE
