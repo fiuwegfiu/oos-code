@@ -63,10 +63,34 @@ def join():
     })
 
 
-# Report ID
-@app.route("/generate/reportid")
-def agent():
-    code = f"R-{numbers(2)}{lletters(1)}{numbers(1)}{letters(2)}"
+# =====================
+# REPORT ID
+# =====================
+
+@app.route("/generate/report")
+def report():
+
+    if not verify_api_key():
+        return jsonify({"error": "Unauthorized"}), 401
+
+    code = f"R-{numbers(2)}{ltters(1){numbers(1)}"
+
+    return jsonify({
+        "code": code
+    })
+
+
+# =====================
+# DISCIPLINE ID
+# =====================
+
+@app.route("/generate/discipline")
+def discipline():
+
+    if not verify_api_key():
+        return jsonify({"error": "Unauthorized"}), 401
+
+    code = f"{letters(1)}{lltters(1){numbers(2)}{letters(1)}"
 
     return jsonify({
         "code": code
