@@ -137,5 +137,12 @@ def security():
 @app.route("/generate/user")
 def security():
 
-  curl -H "Authorization: Bearer 697b5fd7bf378c7532c6e1c297bcde4459d320319b5e8b16764dcc2c58a0eb47" \
-  https://api.melonly.xyz/api/v1/server/info
+import requests
+
+headers = {
+    'Authorization': 'Bearer 697b5fd7bf378c7532c6e1c297bcde4459d320319b5e8b16764dcc2c58a0eb47'
+}
+
+response = requests.get('https://api.melonly.xyz/api/v1/server/info', headers=headers)
+data = response.json()
+print(data)
