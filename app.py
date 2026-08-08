@@ -129,3 +129,19 @@ def security():
     return jsonify({
         "code": code
     })
+
+# =====================
+# Melonly App
+# =====================
+
+@app.route("/generate/user")
+def security():
+
+    const response = await fetch('https://api.melonly.xyz/api/v1/server/info', {
+  headers: {
+    'Authorization': 'Bearer 697b5fd7bf378c7532c6e1c297bcde4459d320319b5e8b16764dcc2c58a0eb47'
+  }
+});
+
+const data = await response.json();
+console.log(data);
